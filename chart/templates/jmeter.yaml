@@ -13,10 +13,8 @@ spec:
     - protocol: TCP
       name: metrics
       port: 9270
-      # nodePort: 30082
       targetPort: 9270
-  # type: NodePort
-  clusterIP: None
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -63,7 +61,7 @@ spec:
   ports:
     - port: 1099
       targetPort: 1099
-  clusterIP: None
+  type: ClusterIP
   selector:
     app: jmeter-slave
 ---
@@ -76,7 +74,7 @@ spec:
     matchLabels:
       app: jmeter-slave
   serviceName: "jmeter-slave"
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
