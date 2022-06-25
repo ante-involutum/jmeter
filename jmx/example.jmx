@@ -101,7 +101,7 @@
             </elementProp>
             <elementProp name="influxdbToken" elementType="Argument">
               <stringProp name="Argument.name">influxdbToken</stringProp>
-              <stringProp name="Argument.value">poUS9No1t08GZDp1mast</stringProp>
+              <stringProp name="Argument.value">${__env(INFLUXDB_TOKEN, , )}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="samplersList" elementType="Argument">
